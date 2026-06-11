@@ -1,0 +1,227 @@
+/* ============================================================
+   VAIN.PRODUCTIONS — Watermark & Developer Branding
+   Professional watermark overlay + EmmarzDevs footer
+   ============================================================ */
+
+/* ─── 1. Page Watermark Overlay ─── */
+.page-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-watermark::before {
+  content: 'VAIN';
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 22vw, 18rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.025;
+  white-space: nowrap;
+  transform: rotate(-15deg);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+[data-theme="dark"] .page-watermark::before {
+  opacity: 0.04;
+}
+
+.page-watermark::after {
+  content: 'VAIN.PRODUCTIONS';
+  position: absolute;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  font-family: var(--font-body);
+  font-size: clamp(0.55rem, 1vw, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0.2;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+[data-theme="dark"] .page-watermark::after {
+  opacity: 0.35;
+}
+
+/* ─── 2. Developer Branding Footer ─── */
+.dev-footer {
+  background: var(--color-bg-tertiary);
+  border-top: 1px solid var(--color-border-glass);
+  padding: var(--space-lg) 0;
+}
+
+.dev-footer-container {
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.dev-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dev-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-gradient);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+
+.dev-footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dev-footer-powered {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.dev-footer-name {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.dev-footer-name a {
+  color: var(--color-text-primary);
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.dev-footer-name a:hover {
+  color: var(--color-accent);
+}
+
+.dev-footer-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dev-footer-links a {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.dev-footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.dev-footer-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--color-border-glass);
+}
+
+/* ─── 3. Hamburger Menu Theme Toggle ─── */
+.hamburger-theme-item {
+  border-top: 1px solid var(--color-border-glass);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.hamburger-theme-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  font-family: var(--font-body);
+}
+
+.hamburger-theme-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.hamburger-theme-toggle .theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.hamburger-theme-toggle .theme-toggle-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hamburger-theme-toggle .theme-toggle-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ─── 4. Mobile Bottom Nav Theme Toggle ─── */
+.bottom-nav-item.theme-nav-toggle {
+  color: var(--color-text-muted);
+}
+
+.bottom-nav-item.theme-nav-toggle:hover {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .bottom-nav-item.theme-nav-toggle {
+  color: var(--color-accent-light);
+}
+
+/* ─── 5. Responsive ─── */
+@media (max-width: 768px) {
+  .dev-footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .dev-footer-links {
+    width: 100%;
+    justify-content: center;
+  }
+}
